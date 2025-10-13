@@ -42,7 +42,27 @@
                 </div>
             )
         }
-      ReactDOM.render( <div><Header></Header><Header></Header><Header></Header></div>,document.getElementById("root")) 
+        function MainArea(){
+            return (
+                <div style={{display:"flex"}}>
+                    <div style={{fontSize:"1.5em",display:"flex",flexDirection:"column",width:"100%",alignItems:"center",justifyContent:"center"}} >
+                        <h2>Code Your Career</h2>
+                        <h2>Prepare Practice Perform</h2>
+                    </div>
+                    <div style={{width:"100%"}} >
+                        <img style={{width:"100%"}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv280kuEeZ3GxvPe0dq7fGb7IHy-HYuTmLsQ&s" alt="" />
+                    </div>
+                </div>
+            )
+        }
+        function Footer(){
+            return (
+                <div>
+                    <p style={{fontSize:"1em"}}>The software solutions market is experiencing strong growth, with worldwide IT spending expected to reach $5 trillion in 2024 and the custom software development market projected to grow at a 22.5% CAGR from 2024-2030. Demand for developers is high, with over 47.2 million developers globally in 2025 and a projected shortage of 4 million by the same year. Businesses are investing in software to improve efficiency and revenue, with some reporting 20% growth on average. </p>
+                </div>
+            )
+        }
+      ReactDOM.render( <div><Header></Header><MainArea></MainArea><Footer></Footer></div>,document.getElementById("root")) 
    
     </script>
 </body>
