@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.5/babel.min.js"></script>
+</head>
+<body>
+    <div id="d1"></div>
+    <!-- <div id="d2"></div>
+    <div id="d3"></div> -->
+<script type="text/babel">
+     var Jsxbtn=function(){return <button onClick={(ev)=>{abc(ev)}}>JSX Button</button>}
+     var Jsxh1=function(){return <h2 onClick={(ev)=>{abc(ev)}}>JSXH1 Element</h2>}
+     var jsxdiv=<div>
+        <Jsxbtn></Jsxbtn>
+        <Jsxh1></Jsxh1>
+        </div>
+    ReactDOM.render(jsxdiv,document.getElementById("d1")) 
+    function abc(e){
+        console.log(e.target.innerText);
+    }   
+    </script>
+</body>
+</html>
