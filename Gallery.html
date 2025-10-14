@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.5/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+   
+<script type="text/babel">
+     function Gallery(){
+       //state
+       var [images,SetImages]=React.useState(["https://images.pexels.com/photos/29996343/pexels-photo-29996343.jpeg?cs=srgb&dl=pexels-gerardo-pantoja-826939143-29996343.jpg&fm=jpg","https://images.unsplash.com/photo-1666389785207-79fd9a364761?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8anBnfGVufDB8fDB8fHww&fm=jpg&q=60&w=3000","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpncl18DaI3v7avmZpXZVfHtkG7K2_CXvp9A&s","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThtmdTPaHTQkdpHHiu66P7HpTdkYEDxM7u9A&s","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlMb_C92nRNdL-rJuBEjOQPqoEGgPA9NSCbw&s","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStG3VkNRyF4O0KmzMov_GfKtzDbJovfC8GJQ&s",""]);
+       var [i,SetI]=React.useState(0)
+       //action
+        function prev(){
+            SetI((i-1+images.length) % images.length);
+        }
+        function next(){
+            SetI((i+1) % images.length);
+        }
+       //ui
+       return (
+        <div>
+            <img src={images[i]} style={{width:"100px"}} alt=""/>
+            <br></br>
+            <button onClick={()=>{prev()}}>Prev</button>
+            <button onClick={()=>{next()}}>Next</button>
+        </div>
+       )
+     }
+    ReactDOM.render(<Gallery></Gallery>,document.getElementById("root")) 
+    
+    </script>
+</body>
+</html>
