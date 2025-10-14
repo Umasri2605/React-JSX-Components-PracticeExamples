@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.5/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+   <script type="text/babel">
+   function Todolist(){
+    //state
+    var [todos,SetTodos]=React.useState([])
+    //action
+    function AddTodo(){
+        var newtodo=document.getElementById("d1").value;
+        // SetTodos([...todos,newtodo]);
+        SetTodos((currenttodos)=>{
+            return [...currenttodos,newtodo]
+        })
+    }
+    // function DeleteTodo(index){
+    //   SetTodos((currenttodos)=>{
+        // currenttodos.splice(index,1)
+        // return[...currenttodos];
+    //     return currenttodos.filter((todo,i)=>{
+    //         if(i!==index){
+    //           return true;
+    //         }
+    //     })
+    //   })
+    //    }
+    function DeleteTodo(index){
+        SetTodos(currenttodos=>currenttodos.filter((todo,i)=>i!==index));
+    }
+    //ui
+    return (
+        <div>
+            <h1>Todolist</h1>
+             <input type="text" id="d1"/>
+             <button onClick={()=>{AddTodo()}}>AddTodo</button>
+             <ul>
+                {
+                    todos.map((todo,i)=>{
+                        return<li>
+                            {todo}
+                            <button onClick={()=>{DeleteTodo(i)}}>DelTodo</button>
+                            </li>
+                    })
+                }
+             </ul>   
+        </div>   
+    )
+   }
+   ReactDOM.render(<Todolist></Todolist>,document.getElementById("root"))
+   </script> 
+</body>
+</html>
