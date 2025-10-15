@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.5/babel.min.js"></script>
+</head>
+<style>
+    .mynav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgb(195, 208, 221);
+        margin: 20px;
+    }
+    .mynav ul{
+        display: flex;
+        padding:0px;
+        margin-left: 900px;
+       
+    }
+    .mynav ul li{
+        list-style: none;
+        width:100px;       
+    }
+</style>
+<body>
+   <div id="root"></div> 
+   <script type="text/babel">
+    function Header(){
+    return (
+        <div className="mynav">
+            <h1>Edupoly</h1>
+            <ul>
+                <li>Home</li>
+                <li>ContactUs</li>
+                <li>AboutUs</li>
+            </ul>
+        </div>
+    ) 
+    }
+    function MainArea(){
+        return (
+            <div style={{display:"flex",alignItems:"center"}}>
+                <div style={{fontSize:"2em",display:"flex",flexDirection:"column",width:"50%",alignItems:"center"}}>
+                   <h2>Code Your Career</h2>
+                   <h2>Prepar Practice Perform</h2>
+                </div>
+                 <div style={{width:"50%"}}>
+                    <img style={{width:"100%"}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGQrKM7ebsH9j7rnCnX-979Vvt-X9MfeD3iA&s" alt=""/>
+                </div>
+            </div>
+        )
+    }
+    function Footer(){
+        return (
+            <p>The software solutions market is experiencing strong growth, with global IT spending expected to reach $5 trillion in 2024 and the custom software development market projected to grow at a CAGR of 22.5%. There are over 47.2 million software developers globally, but a significant shortage of 4.0 million by 2025 is expected, potentially leading to higher salaries</p>
+        )
+    }
+    function Website(){
+        return <div><Header></Header><MainArea></MainArea><Footer></Footer></div>
+    }
+    ReactDOM.render(<Website></Website>,document.getElementById("root"));
+   </script>
+</body>
+</html>
